@@ -1,0 +1,30 @@
+#include<iostream>
+#include<math.h>
+#include<cstdlib>
+
+using namespace std;
+
+int main(){
+  int n,v=0;
+  int c;
+  cout<<"Введите массив : ";
+  cin>>n;
+
+  int *masiv=new int[n];
+
+  for(int i=1;i<=n;i++) masiv[i-1]=i;
+    //cout << "Элемент " << i << " значение " << masiv[i] << endl;
+  for(int j=0;j<=n-1;j++){
+    c=0;
+    for(int r=2;r<=masiv[j]-1;r++){
+      if(masiv[j]%r==0) c++;
+    }
+    if(c==0) {cout<<masiv[j]<<endl;v++;}
+  }
+
+  
+  cout<<"Колличество простых чисел : "<<v<<endl;
+  
+  delete [] masiv;
+  return 0;
+}
